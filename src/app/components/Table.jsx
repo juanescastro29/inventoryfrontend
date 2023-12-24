@@ -44,11 +44,11 @@ const Table = ({ type, data }) => {
   return (
     <>
       <div className="container mt-2 mx-auto p-5">
-        <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+        <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white">
           <div className="relative mt-1">
             <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4 text-gray-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -79,15 +79,18 @@ const Table = ({ type, data }) => {
           </button>
         </div>
         <div className="relative overflow-x-auto shadow-md mx-auto">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+            <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white ">
               {type === "customers" && <>Tabla Compradores</>}
               {type === "suppliers" && <>Tabla Proveedores</>}
               {type === "products" && <>Tabla Productos</>}
               {type === "purchases" && <>Tabla Pedidos</>}
               {type === "sales" && <>Tabla Ventas</>}
             </caption>
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead
+              className="text-xs text-gray-700 uppercase bg-gray-50 
+            "
+            >
               {type === "customers" && (
                 <tr>
                   <th scope="col" className="px-6 py-3">
@@ -214,7 +217,7 @@ const Table = ({ type, data }) => {
                 <>
                   {filteredData.map((customer) => (
                     <tr
-                      className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                      className="odd:bg-white even:bg-gray-50 "
                       key={customer.id}
                     >
                       <td className="px-6 py-4">{customer.id}</td>
@@ -224,7 +227,8 @@ const Table = ({ type, data }) => {
                       <td className="px-6 py-4">{customer.email}</td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600 
+                           hover:underline"
                           onClick={() => {
                             setIdEdit(customer.id);
                             viewEditModal();
@@ -235,7 +239,7 @@ const Table = ({ type, data }) => {
                       </td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdDelete(customer.id);
                             viewConfirmModal();
@@ -252,7 +256,7 @@ const Table = ({ type, data }) => {
                 <>
                   {filteredData.map((supplier) => (
                     <tr
-                      className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                      className="odd:bg-white  even:bg-gray-50  border-b "
                       key={supplier.id}
                     >
                       <td className="px-6 py-4">{supplier.id}</td>
@@ -262,7 +266,7 @@ const Table = ({ type, data }) => {
                       <td className="px-6 py-4">{supplier.email}</td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdEdit(supplier.id);
                             viewEditModal();
@@ -273,7 +277,7 @@ const Table = ({ type, data }) => {
                       </td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdDelete(supplier.id);
                             viewConfirmModal();
@@ -290,7 +294,7 @@ const Table = ({ type, data }) => {
                 <>
                   {filteredData.map((product) => (
                     <tr
-                      className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                      className="odd:bg-white  even:bg-gray-50  border-b "
                       key={product.id}
                     >
                       <td className="px-6 py-4">{product.id}</td>
@@ -301,7 +305,7 @@ const Table = ({ type, data }) => {
                       <td className="px-6 py-4">{product.stock}</td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdEdit(product.id);
                             viewEditModal();
@@ -312,7 +316,7 @@ const Table = ({ type, data }) => {
                       </td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdDelete(product.id);
                             viewConfirmModal();
@@ -329,7 +333,7 @@ const Table = ({ type, data }) => {
                 <>
                   {filteredData.map((purchase) => (
                     <>
-                      <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                      <tr className="odd:bg-white  even:bg-gray-50  border-b ">
                         <td className="px-6 py-3">
                           {purchase?.purchase?.supplier}
                         </td>
@@ -343,7 +347,7 @@ const Table = ({ type, data }) => {
                         <td className="px-6 py-3">{purchase.total}</td>
                         <td className="px-6 py-4">
                           <button
-                            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                            className="font-medium text-blue-600  hover:underline"
                             onClick={() => {
                               setIdEdit(purchase.id);
                               viewEditModal();
@@ -354,7 +358,7 @@ const Table = ({ type, data }) => {
                         </td>
                         <td className="px-6 py-4">
                           <button
-                            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                            className="font-medium text-blue-600  hover:underline"
                             onClick={() => {
                               setIdDelete(purchase.purchase_id);
                               viewConfirmModal();
@@ -372,7 +376,7 @@ const Table = ({ type, data }) => {
                 <>
                   {filteredData.map((sale) => (
                     <tr
-                      className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                      className="odd:bg-white  even:bg-gray-50  border-b "
                       key={sale.id}
                     >
                       <td className="px-6 py-3">{sale?.sale?.customer}</td>
@@ -384,7 +388,7 @@ const Table = ({ type, data }) => {
                       <td className="px-6 py-3">{sale.total}</td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdEdit(sale.id);
                             viewEditModal();
@@ -395,7 +399,7 @@ const Table = ({ type, data }) => {
                       </td>
                       <td className="px-6 py-4">
                         <button
-                          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                          className="font-medium text-blue-600  hover:underline"
                           onClick={() => {
                             setIdDelete(sale.sale_id);
                             viewConfirmModal();
