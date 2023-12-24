@@ -29,7 +29,7 @@ const ConfirmModal = ({ confirmModal, viewConfirmModal, type, idDelete }) => {
           mutate(apiURL);
           return "Proveedor eliminado";
         },
-        error: "Error al eliminar proveedo.",
+        error: "Error al eliminar proveedor",
       });
     } else if (type === "products") {
       toast.promise(ProductsApi.deleteProduct(idDelete), {
