@@ -15,18 +15,18 @@ const ConfirmModal = ({ confirmModal, viewConfirmModal, type, idDelete }) => {
       toast.promise(CustomerApi.deleteCustomer(idDelete), {
         loading: "Eliminando comprador",
         success: () => {
-          mutate(apiURL);
           viewConfirmModal();
+          mutate(apiURL);
           return "Comprador eliminado";
         },
-        error: "Error al eliminar comprdador",
+        error: "Error al eliminar compradador",
       });
     } else if (type === "suppliers") {
       toast.promise(SuppliersApi.deleteSupplier(idDelete), {
         loading: "Eliminando proveedor",
         success: () => {
-          mutate(apiURL);
           viewConfirmModal();
+          mutate(apiURL);
           return "Proveedor eliminado";
         },
         error: "Error al eliminar proveedo.",
@@ -35,8 +35,8 @@ const ConfirmModal = ({ confirmModal, viewConfirmModal, type, idDelete }) => {
       toast.promise(ProductsApi.deleteProduct(idDelete), {
         loading: "Eliminando producto",
         success: () => {
-          mutate(apiURL);
           viewConfirmModal();
+          mutate(apiURL);
           return "Producto eliminado";
         },
         error: "Error al eliminar producto",
@@ -45,8 +45,8 @@ const ConfirmModal = ({ confirmModal, viewConfirmModal, type, idDelete }) => {
       toast.promise(PurchasesApi.deletePurchase(idDelete), {
         loading: "Eliminando pedido",
         success: () => {
-          mutate(apiURL);
           viewConfirmModal();
+          mutate(apiURL);
           return "Pedido eliminado";
         },
         error: "Error al eliminar pedido",
@@ -55,8 +55,8 @@ const ConfirmModal = ({ confirmModal, viewConfirmModal, type, idDelete }) => {
       toast.promise(SalesApi.deleteSales(idDelete), {
         loading: "Eliminando venta",
         success: () => {
-          mutate(apiURL);
           viewConfirmModal();
+          mutate(apiURL);
           return "Venta eliminada";
         },
         error: "Error al eliminar venta",
